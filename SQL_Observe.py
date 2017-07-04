@@ -15,7 +15,7 @@ print(push_sql(command,user,password))
 
 
 
-"""Shows tables in a database, In this example githubs is the database"""
+"""Shows tables in a database, In this example bitfinex is the database"""
 command= "show tables from bitfinex"
 #where bitfinex is the database
 print(push_sql(command,user,password))
