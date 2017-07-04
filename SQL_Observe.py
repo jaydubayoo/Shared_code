@@ -26,8 +26,6 @@ print(push_sql(command,user,password))
 """Once you get familiar with the structures of our database, you can collect data as such """
 
 
-
-
 'Select Data (AKA table), where orderbook_BTC_USDT is the table and, * , tells mysql to choos all the data ' 
 command = ' select * from bitfinex.orderbook_BTC_USDT' 
 #where bitfinex is the database
