@@ -17,33 +17,35 @@ print(push_sql(command,user,password))
 
 """Shows tables in a database, In this example githubs is the database"""
 command= "show tables from bitfinex"
+#where bitfinex is the database
 print(push_sql(command,user,password))
 
 
 
+"""Edit 07/4/17"""
 """Once you get familiar with the structures of our database, you can collect data as such """
-
-'First Specify the data base where bitfinex is the database'
-command= 'use bitfinex'
-push_sql(command,user,password)
 
 
 'Select Data (AKA table), where orderbook_BTC_USDT is the table and, * , tells mysql to choos all the data ' 
-command = ' select * from orderbook_BTC_USDT'
+command = ' select * from bitfinex.orderbook_BTC_USDT' 
+#where bitfinex is the database
+#and orderbook_BTC_USDT is the table
 data=push_sql(command,user,password)
 #  'data' will be of type dictionary, hopefully our great leader KEVIN MAURO, can teach you how to use this
 
 
+
 ' if you want to select the first X (100 in our example) rows of the Data, we exectute '
-command = ' Select * from orderbook_BTC_USDT LIMIT 100'
+command = ' Select * from bitfinex.orderbook_BTC_USDT LIMIT 100'
 data=push_sql(command,user,password)
 #again, 'data' will be of type dictionary
 
 'if you want to select data that meets certain requirements, for example, we want data that happend after timestamp 140116800 '
 ' and before timestamp 141116800 '
-command ='Select * from orderbook_BTC_USDT where timestamp >140116800 and timestamp<141116800 '
+command ='Select * from bitfinex.orderbook_BTC_USDT where timestamp >140116800 and timestamp<141116800 '
 data=push_sql(command,user,password)
 print ('finish')
+
 
 
 """here is a cheat sheet of other MYSQL Syntax"""
